@@ -1,0 +1,41 @@
+CREATE TABLE `wp_ccm_customers` (
+  `id` mediumint(9) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `date_of_birth` date NOT NULL,
+  `gender` enum('male','female','other') NOT NULL,
+  `cr_number` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  `city` varchar(100) NOT NULL,
+  `country` varchar(100) NOT NULL,
+  `status` enum('active','inactive') DEFAULT 'active',
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `cr_number` (`cr_number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+INSERT INTO `wp_ccm_customers` (`name`, `email`, `phone`, `date_of_birth`, `gender`, `cr_number`, `address`, `city`, `country`, `status`) VALUES
+('John Smith', 'john.smith@example.com', '1234567890', '1985-05-15', 'male', 'CR001', '123 Main Street', 'New York', 'USA', 'active'),
+('Sarah Johnson', 'sarah.johnson@example.com', '0987654321', '1990-08-22', 'female', 'CR002', '456 Oak Avenue', 'Los Angeles', 'USA', 'active'),
+('Michael Brown', 'michael.brown@example.com', '1122334455', '1982-12-10', 'male', 'CR003', '789 Pine Road', 'Chicago', 'USA', 'inactive'),
+('Emily Davis', 'emily.davis@example.com', '5566778899', '1995-03-30', 'female', 'CR004', '321 Elm Street', 'Houston', 'USA', 'active'),
+('Robert Wilson', 'robert.wilson@example.com', '6677889900', '1978-07-18', 'male', 'CR005', '654 Maple Drive', 'Phoenix', 'USA', 'active'),
+('Jennifer Lee', 'jennifer.lee@example.com', '7788990011', '1988-11-25', 'female', 'CR006', '987 Cedar Lane', 'Philadelphia', 'USA', 'inactive'),
+('David Miller', 'david.miller@example.com', '8899001122', '1992-02-14', 'male', 'CR007', '147 Walnut Court', 'San Antonio', 'USA', 'active'),
+('Amanda Taylor', 'amanda.taylor@example.com', '9900112233', '1987-09-08', 'female', 'CR008', '258 Birch Way', 'San Diego', 'USA', 'active'),
+('Christopher Anderson', 'christopher.anderson@example.com', '1011121314', '1980-04-12', 'male', 'CR009', '369 Spruce Circle', 'Dallas', 'USA', 'inactive'),
+('Jessica Thomas', 'jessica.thomas@example.com', '1516171819', '1993-06-20', 'female', 'CR010', '741 Aspen Trail', 'San Jose', 'USA', 'active'),
+('Laura Martinez', 'laura.martinez@example.com', '2021222324', '1986-01-19', 'female', 'CR011', '852 Palm Street', 'Austin', 'USA', 'active'),
+('Kevin Harris', 'kevin.harris@example.com', '2324252627', '1981-10-05', 'male', 'CR012', '963 Willow Drive', 'Jacksonville', 'USA', 'inactive'),
+('Olivia White', 'olivia.white@example.com', '2627282930', '1994-04-28', 'female', 'CR013', '159 Redwood Lane', 'Fort Worth', 'USA', 'active'),
+('Brian Clark', 'brian.clark@example.com', '3031323334', '1983-11-11', 'male', 'CR014', '753 Cypress Road', 'Columbus', 'USA', 'active'),
+('Megan Lewis', 'megan.lewis@example.com', '3334353637', '1991-07-02', 'female', 'CR015', '258 Poplar Avenue', 'Charlotte', 'USA', 'inactive'),
+('Jason Walker', 'jason.walker@example.com', '3637383940', '1987-02-27', 'male', 'CR016', '847 Chestnut Street', 'San Francisco', 'USA', 'active'),
+('Natalie Hall', 'natalie.hall@example.com', '4041424344', '1996-09-14', 'female', 'CR017', '468 Dogwood Court', 'Indianapolis', 'USA', 'active'),
+('Ethan Young', 'ethan.young@example.com', '4344454647', '1984-06-03', 'male', 'CR018', '579 Magnolia Road', 'Seattle', 'USA', 'inactive'),
+('Victoria King', 'victoria.king@example.com', '4748495051', '1989-03-22', 'female', 'CR019', '690 Sycamore Lane', 'Denver', 'USA', 'active'),
+('Andrew Wright', 'andrew.wright@example.com', '5152535455', '1980-12-17', 'male', 'CR020', '801 Fir Trail', 'Washington', 'USA', 'active');

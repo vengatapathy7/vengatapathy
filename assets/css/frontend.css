@@ -1,0 +1,144 @@
+/* Frontend Styles */
+.ccm-frontend-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.ccm-search-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ccm-search-field {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 300px;
+    font-size: 14px;
+}
+
+.ccm-search-button,
+.ccm-clear-button {
+    padding: 8px 16px;
+    background: #2271b1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ccm-clear-button {
+    background: #6c757d;
+}
+
+.ccm-search-button:hover {
+    background: #135e96;
+}
+
+.ccm-clear-button:hover {
+    background: #545b62;
+}
+
+.ccm-customers-grid {
+    margin-bottom: 30px;
+}
+
+.ccm-customers-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    gap: 1px;
+    background: #f0f0f0;
+    margin-bottom: 1px;
+}
+
+.ccm-customers-header {
+    font-weight: bold;
+    background: #2271b1;
+    color: white;
+}
+
+.ccm-customers-row > div {
+    padding: 12px 15px;
+    background: white;
+}
+
+.ccm-customers-header > div {
+    background: #2271b1;
+}
+
+.ccm-pagination-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.ccm-page-link {
+    padding: 8px 16px;
+    background: #2271b1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ccm-page-link:hover:not(:disabled) {
+    background: #135e96;
+}
+
+.ccm-page-link:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+.ccm-page-info {
+    font-weight: bold;
+    color: #333;
+}
+
+.ccm-loading,
+.ccm-no-customers,
+.ccm-error {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: #666;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ccm-customers-row {
+        grid-template-columns: 1fr;
+        margin-bottom: 10px;
+    }
+    
+    .ccm-customers-header {
+        display: none;
+    }
+    
+    .ccm-customers-row > div {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    
+    .ccm-customers-row > div::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .ccm-search-field {
+        min-width: 200px;
+    }
+}
